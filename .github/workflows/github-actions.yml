@@ -216,16 +216,16 @@ jobs:
             MINOR_VER=$(echo "${CIRCLE_TAG}" | sed -E 's/([0-9.]*)[_-]?(.*)/\2/')
             RELEASE_NOTE_FILE=$(echo "${MAJOR_VER}_${MINOR_VER}_note.txt" | sed "s/\./_/")
             echo "Generating manifest file..."
-            echo "DSL-AX82U#FW${MAJOR_VER}#EXT${MINOR_VER}"      >> ${UPDATE_DIR}/manifest2.txt
+            echo "DSL-AX82U#FW${MAJOR_VER}#EXT${MINOR_VER}"      >  ${UPDATE_DIR}/manifest2.txt
             echo "RT-AX82U#FW${MAJOR_VER}#EXT${MINOR_VER}"       >> ${UPDATE_DIR}/manifest2.txt
             echo "RT-AX82U_V2#FW${MAJOR_VER}#EXT${MINOR_VER}"    >> ${UPDATE_DIR}/manifest2.txt
+            echo "RT-AX92U#FW${MAJOR_VER}#EXT${MINOR_VER}"       >> ${UPDATE_DIR}/manifest2.txt
             echo "RT-AX5400#FW${MAJOR_VER}#EXT${MINOR_VER}"      >> ${UPDATE_DIR}/manifest2.txt
             echo "TUF-AX5400#FW${MAJOR_VER}#EXT${MINOR_VER}"     >> ${UPDATE_DIR}/manifest2.txt
             echo "TUF-AX3000#FW${MAJOR_VER}#EXT${MINOR_VER}"     >> ${UPDATE_DIR}/manifest2.txt
             echo "TUF-AX3000_V2#FW${MAJOR_VER}#EXT${MINOR_VER}"  >> ${UPDATE_DIR}/manifest2.txt
             echo "RT-AX95Q#FW${MAJOR_VER}#EXT${MINOR_VER}"       >> ${UPDATE_DIR}/manifest2.txt
             echo "RT-AXE95Q#FW${MAJOR_VER}#EXT${MINOR_VER}"      >> ${UPDATE_DIR}/manifest2.txt
-            echo "RT-AX5400#FW${MAJOR_VER}#EXT${MINOR_VER}"      >> ${UPDATE_DIR}/manifest2.txt
             echo "RT-AX58U_V2#FW${MAJOR_VER}#EXT${MINOR_VER}"    >> ${UPDATE_DIR}/manifest2.txt
             cp ${CHANGELOG_FILE} ${UPDATE_DIR}/"${RELEASE_NOTE_FILE}"
             echo "Uploading to github manifest and ${RELEASE_NOTE_FILE}"
